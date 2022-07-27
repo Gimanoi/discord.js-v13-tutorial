@@ -48,12 +48,12 @@ client.categories = fs.readdirSync('./commands');
 
 
 //snipe map
-client.snipes = new Map() //create a new map
+client.snipes = new Map()
 client.on('messageDelete', function(message, channel) {
-    client.snipes.set(message.channel.id, { //get the channel of message
-        content: message.content, //snipe the message that was deleted
-        author: message.author, //get the message author the the deleted message
-        image: message.attachments.first() ? message.attachments.first().proxyURL : null //get the deleted image if there is one
+    client.snipes.set(message.channel.id, {
+        content: message.content,
+        author: message.author,
+        image: message.attachments.first() ? message.attachments.first().proxyURL : null
     })
 })
 
